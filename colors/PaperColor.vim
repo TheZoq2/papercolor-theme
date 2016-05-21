@@ -245,7 +245,7 @@ if s:is_dark " DARK VARIANT
   let s:green   = ['#dfaf00', '178'] "Boolean/Special
   let s:blue    = ['#00afaf', '37'] "Keyword
 
-  let s:pink    = ['#afdf00', '148'] "Type
+  let s:pink    = ['#afdf00', '99'] "Type
   let s:olive   = ['#dfaf5f', '179'] "String
   let s:navy    = ['#df875f', '173'] "StorageClass
 
@@ -263,7 +263,7 @@ if s:is_dark " DARK VARIANT
   let s:window       = ['#3a3a3a', '236']
   let s:divider      = ['#5f8787', '66']
   let s:linenumber   = ['#606060', '240']
-  let s:comment      = ['#8a8a8a', '244']
+  let s:comment      = ['#15572b', '35']
   let s:todo         = ['#ff8700', '208']
   let s:cursorline   = ['#303030', '235']
   let s:cursorlinenr = ['#ffff00', '226']
@@ -299,7 +299,7 @@ if s:is_dark " DARK VARIANT
   let s:visual_bg = ['#8787af', '103']
 
   " Folded:
-  let s:folded_fg = ['#afdf00', '148']
+  let s:folded_fg = ['#8a8a8a', '244']
   let s:folded_bg = ['#444444', '237']
 
   " WildMenu:
