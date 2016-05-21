@@ -348,13 +348,15 @@ else " LIGHT VARIANT
   let s:window       = ['#e4e4e4', '254']
   let s:divider      = s:navy
   let s:linenumber   = ['#bcbcbc', '249']
-  let s:comment      = ['#878787', '102']
+  let s:comment      = ['#878787', '28']
   let s:todo         = ['#00af5f', '35']
   let s:cursorline   = ['#e4e4e4', '254']
   let s:cursorlinenr = ['#af0000', '124']
   let s:cursorcolumn = ['#e4e4e4', '254']
   let s:error        = ['#ffafdf', '218']
   let s:matchparen   = ['#c6c6c6', '251']
+
+  let s:string       = ['#000000', '57']
 
   " Spelling:
   let s:spellbad   = ['#ffafdf', '218']
@@ -463,7 +465,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("Comment", s:comment, "", "")
 
   call s:HL("Constant", s:orange, "", "")
-  call s:HL("String", s:olive, "", "")
+  call s:HL("String", s:string, "", "")
   call s:HL("Character", s:olive, "", "")
   call s:HL("Number", s:orange, "", "")
   call s:HL("Boolean", s:green, "", "bold")
