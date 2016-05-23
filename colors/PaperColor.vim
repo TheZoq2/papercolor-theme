@@ -300,7 +300,7 @@ if s:is_dark " DARK VARIANT
 
   " Folded:
   let s:folded_fg = ['#8a8a8a', '244']
-  let s:folded_bg = ['#444444', '237']
+  let s:folded_bg = ['#444444', '234']
 
   " WildMenu:
   let s:wildmenu_fg  = s:background
@@ -318,6 +318,9 @@ if s:is_dark " DARK VARIANT
 
   let s:diffchange_fg = ['#000000', '16']
   let s:diffchange_bg = ['#dfaf00', '178']
+
+
+  let s:string       = ['#000000', '204']
 
   " User Override Settings:
   if exists("g:PaperColor_Dark_Override")
