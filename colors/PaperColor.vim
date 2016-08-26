@@ -247,7 +247,7 @@ if s:is_dark " DARK VARIANT
 
   let s:pink    = ['#afdf00', '99'] "Type
   let s:olive   = ['#dfaf5f', '179'] "String
-  let s:navy    = ['#df875f', '173'] "StorageClass
+  let s:navy    = ['#df875f', '161'] "StorageClass
 
   let s:orange  = ['#ff5faf', '205'] "Number
   let s:purple  = ['#af87af', '139'] "Repeat/Conditional
@@ -347,7 +347,7 @@ else " LIGHT VARIANT
   let s:foreground   = ['#444444', '238']
   let s:background   = ['#F5F5F5', '255']
   let s:selection    = ['#d0d0d0', '252']
-  let s:nontext      = ['#dfafff', '189']
+  let s:nontext      = ['#dfafff', '251']
   let s:window       = ['#e4e4e4', '254']
   let s:divider      = s:navy
   let s:linenumber   = ['#bcbcbc', '249']
