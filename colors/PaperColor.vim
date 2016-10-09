@@ -251,7 +251,8 @@ if s:is_dark " DARK VARIANT
 
   let s:orange  = ['#ff5faf', '205'] "Number
   let s:purple  = ['#af87af', '139'] "Repeat/Conditional
-  let s:aqua    = ['#5fafdf', '74'] "Operator/Delimiter
+  let s:aqua    = ['#5fafdf', '74'] "Delimiter
+  let s:fire    = ['#ff0000', '172'] "Operator
 
   let s:wine  = ['#af8787', '138']
 
@@ -339,7 +340,9 @@ else " LIGHT VARIANT
 
   let s:orange  = ['#d75f00', '166'] "Number
   let s:purple  = ['#8959a8', '97'] "Repeat/Conditional
-  let s:aqua    = ['#3e999f', '31'] "Operator/Delimiter
+  let s:aqua    = ['#3e999f', '31'] "Delimiter
+  let s:fire    = s:aqua			"Operator
+
 
   let s:wine  = ['#870087', '90']
 
@@ -481,7 +484,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("Conditional", s:purple, "", "bold")
   call s:HL("Repeat", s:purple, "", "bold")
   call s:HL("Label", s:blue, "", "")
-  call s:HL("Operator", s:aqua, "", "none")
+  call s:HL("Operator", s:fire, "", "none")
   call s:HL("Keyword", s:blue, "", "")
   call s:HL("Exception", s:red, "", "")
 
