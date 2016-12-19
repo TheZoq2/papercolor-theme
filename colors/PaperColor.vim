@@ -268,6 +268,7 @@ if s:is_dark " DARK VARIANT
   let s:todo         = ['#ff8700', '208']
   let s:cursorline   = ['#303030', '235']
   let s:cursorlinenr = ['#ffff00', '226']
+  let s:cursorlinenrbg = ["#ffffff", "54"]
   let s:cursorcolumn = ['#303030', '235']
   let s:error        = ['#5f0000', '52']
   let s:matchparen   = ['#4e4e4e', '239']
@@ -358,6 +359,7 @@ else " LIGHT VARIANT
   let s:todo         = ['#00af5f', '35']
   let s:cursorline   = ['#e4e4e4', '254']
   let s:cursorlinenr = ['#af0000', '124']
+  let s:cursorlinenrbg = ['#ffff00', '247']
   let s:cursorcolumn = ['#e4e4e4', '254']
   let s:error        = ['#ffafdf', '218']
   let s:matchparen   = ['#c6c6c6', '251']
@@ -457,7 +459,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("WildMenu", s:wildmenu_fg, s:wildmenu_bg, "bold")
   if version >= 700
     call s:HL("CursorLine", "", s:cursorline, "none")
-    call s:HL("CursorLineNr", s:cursorlinenr, "", "none")
+    call s:HL("CursorLineNr", s:cursorlinenr, s:cursorlinenrbg, "none")
     call s:HL("CursorColumn", "", s:cursorcolumn, "none")
     call s:HL("PMenu", s:foreground, s:selection, "none")
     call s:HL("PMenuSel", s:foreground, s:selection, "reverse")
