@@ -272,6 +272,7 @@ if s:is_dark " DARK VARIANT
   let s:cursorcolumn = ['#303030', '235']
   let s:error        = ['#5f0000', '52']
   let s:matchparen   = ['#4e4e4e', '239']
+  let s:overlength   = ['#4e4e4e', '241']
 
   " Spelling:
   let s:spellbad   = ['#5f0000', '52']
@@ -363,6 +364,7 @@ else " LIGHT VARIANT
   let s:cursorcolumn = ['#e4e4e4', '254']
   let s:error        = ['#ffafdf', '218']
   let s:matchparen   = ['#c6c6c6', '251']
+  let s:overlength   = ['#e4e4e4', '224']
 
   let s:string       = ['#000000', '57']
 
@@ -457,6 +459,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("Folded", s:folded_fg, s:folded_bg, "")
   call s:HL("FoldColumn", "", s:background, "")
   call s:HL("WildMenu", s:wildmenu_fg, s:wildmenu_bg, "bold")
+  call s:HL("OverLength", "", s:overlength, "")
   if version >= 700
     call s:HL("CursorLine", "", s:cursorline, "none")
     call s:HL("CursorLineNr", s:cursorlinenr, s:cursorlinenrbg, "none")
