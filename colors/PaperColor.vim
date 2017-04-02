@@ -249,10 +249,13 @@ if s:is_dark " DARK VARIANT
   let s:olive   = ['#dfaf5f', '179'] "String
   let s:navy    = ['#df875f', '161'] "StorageClass
 
-  let s:orange  = ['#ff5faf', '205'] "Number
-  let s:purple  = ['#af87af', '139'] "Repeat/Conditional
+  let s:orange  = ['#ff5faf', '166'] "Number
+  let s:purple  = ['#af87af', '97'] "Repeat/Conditional
   let s:aqua    = ['#5fafdf', '74'] "Delimiter
   let s:fire    = ['#ff0000', '172'] "Operator
+
+  let s:conditional = ['#ffffff', '155']
+  let s:rubySymbol = ['#ffffff', '22']
 
   let s:wine  = ['#af8787', '138']
 
@@ -346,6 +349,11 @@ else " LIGHT VARIANT
   let s:fire    = s:aqua			"Operator
 
 
+
+  let s:conditional = s:purple
+  let s:rubySymbol = s:orange
+
+
   let s:wine  = ['#870087', '90']
 
   " Basics:
@@ -356,17 +364,17 @@ else " LIGHT VARIANT
   let s:window       = ['#e4e4e4', '254']
   let s:divider      = s:navy
   let s:linenumber   = ['#bcbcbc', '249']
-  let s:comment      = ['#878787', '28']
+  let s:comment      = ['#008700', '28']
   let s:todo         = ['#00af5f', '35']
   let s:cursorline   = ['#e4e4e4', '254']
   let s:cursorlinenr = ['#af0000', '124']
-  let s:cursorlinenrbg = ['#ffff00', '247']
+  let s:cursorlinenrbg = ['#9e9e9e', '247']
   let s:cursorcolumn = ['#e4e4e4', '254']
   let s:error        = ['#ffafdf', '218']
   let s:matchparen   = ['#c6c6c6', '251']
   let s:overlength   = ['#e4e4e4', '224']
 
-  let s:string       = ['#000000', '57']
+  let s:string       = ['#5f00ff', '57']
 
   " Spelling:
   let s:spellbad   = ['#ffafdf', '218']
@@ -486,7 +494,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("Function", s:foreground, "", "")
 
   call s:HL("Statement", s:pink, "", "none")
-  call s:HL("Conditional", s:purple, "", "bold")
+  call s:HL("Conditional", s:conditional, "", "bold")
   call s:HL("Repeat", s:purple, "", "bold")
   call s:HL("Label", s:blue, "", "")
   call s:HL("Operator", s:fire, "", "none")
@@ -575,7 +583,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("cBoolean", s:green, "", "")
   call s:HL("cCharacter", s:olive, "", "")
   call s:HL("cConstant", s:green, "", "bold")
-  call s:HL("cConditional", s:purple, "", "bold")
+  call s:HL("cConditional", s:conditional, "", "bold")
   call s:HL("cSpecial", s:olive, "", "bold")
   call s:HL("cDefine", s:blue, "", "")
   call s:HL("cNumber", s:orange, "", "")
@@ -761,7 +769,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("pythonException", s:purple, "", "bold")
   call s:HL("pythonInclude", s:red, "", "")
   call s:HL("pythonStatement", s:pink, "", "")
-  call s:HL("pythonConditional", s:purple, "", "bold")
+  call s:HL("pythonConditional", s:conditional, "", "bold")
   call s:HL("pythonRepeat", s:purple, "", "bold")
   call s:HL("pythonFunction", s:aqua, "", "bold")
   call s:HL("pythonPreCondit", s:purple, "", "")
@@ -801,7 +809,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("javaScriptParens", s:blue, "", "")
   call s:HL("javaScriptIdentifier", s:pink, "", "")
   call s:HL("javaScriptFunction", s:blue, "", "bold")
-  call s:HL("javaScriptConditional", s:purple, "", "bold")
+  call s:HL("javaScriptConditional", s:conditional, "", "bold")
   call s:HL("javaScriptRepeat", s:purple, "", "bold")
   call s:HL("javaScriptBoolean", s:green, "", "bold")
   call s:HL("javaScriptNumber", s:orange, "", "")
@@ -837,7 +845,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("goDirective", s:red, "", "")
   call s:HL("goDeclaration", s:blue, "", "bold")
   call s:HL("goStatement", s:pink, "", "")
-  call s:HL("goConditional", s:purple, "", "bold")
+  call s:HL("goConditional", s:conditional, "", "bold")
   call s:HL("goConstants", s:orange, "", "")
   call s:HL("goFunction", s:orange, "", "")
   " call s:HL("goTodo", s:comment, "", "bold")
@@ -940,7 +948,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("rubyInstanceVariable", s:purple, "", "")
   call s:HL("rubyFunction", s:foreground, "", "bold")
   call s:HL("rubyDefine", s:pink, "", "")
-  call s:HL("rubySymbol", s:aqua, "", "")
+  call s:HL("rubySymbol", s:rubySymbol, "", "")
   call s:HL("rubyConstant", s:blue, "", "")
   call s:HL("rubyAccess", s:navy, "", "")
   call s:HL("rubyAttribute", s:green, "", "")
@@ -951,7 +959,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("rubyArrayDelimiter", s:aqua, "", "")
   call s:HL("rubyStringDelimiter", s:olive, "", "")
   call s:HL("rubyInterpolationDelimiter", s:orange, "", "")
-  call s:HL("rubyConditional", s:purple, "", "bold")
+  call s:HL("rubyConditional", s:conditional, "", "bold")
   call s:HL("rubyRepeat", s:purple, "", "bold")
   call s:HL("rubyControl", s:purple, "", "bold")
   call s:HL("rubyException", s:purple, "", "bold")
@@ -984,7 +992,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("phpVarSelector", s:pink, "", "")
   call s:HL("phpKeyword", s:blue, "", "")
   call s:HL("phpRepeat", s:purple, "", "bold")
-  call s:HL("phpConditional", s:purple, "", "bold")
+  call s:HL("phpConditional", s:conditional, "", "bold")
   call s:HL("phpStatement", s:pink, "", "")
   call s:HL("phpAssignByRef", s:aqua, "", "bold")
   call s:HL("phpSpecialFunction", s:blue, "", "")
