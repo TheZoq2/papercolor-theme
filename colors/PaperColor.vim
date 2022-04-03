@@ -252,7 +252,7 @@ if s:is_dark " DARK VARIANT
   let s:orange  = ['#ff5faf', '166'] "Number
   let s:purple  = ['#af87af', '97'] "Repeat/Conditional
   let s:aqua    = ['#5fafdf', '74'] "Delimiter
-  let s:fire    = ['#ff0000', '172'] "Operator
+  let s:operator    = ['#ff0000', '172'] "Operator
 
   let s:conditional = ['#ffffff', '155']
   let s:rubySymbol = ['#ffffff', '22']
@@ -346,7 +346,7 @@ else " LIGHT VARIANT
   let s:orange  = ['#d75f00', '166'] "Number
   let s:purple  = ['#8959a8', '97'] "Repeat/Conditional
   let s:aqua    = ['#3e999f', '31'] "Delimiter
-  let s:fire    = s:aqua			"Operator
+  let s:operator    = s:aqua			"Operator
 
 
 
@@ -497,7 +497,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("Conditional", s:conditional, "", "bold")
   call s:HL("Repeat", s:purple, "", "bold")
   call s:HL("Label", s:blue, "", "")
-  call s:HL("Operator", s:fire, "", "none")
+  call s:HL("Operator", s:operator, "", "none")
   call s:HL("Keyword", s:blue, "", "")
   call s:HL("Exception", s:red, "", "")
 
@@ -1225,6 +1225,26 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("StartifySlash", s:navy, "", "")
   call s:HL("StartifyBracket", s:aqua, "", "")
   call s:HL("StartifySpecial", s:aqua, "", "")
+
+
+  " Treesitter
+  call s:HL("TSNamespace", s:red, "", "")
+  call s:HL("TSType", s:foreground, "", "bold,italic")
+  call s:HL("TSFunction", s:foreground, "", "bold")
+  call s:HL("TSConstant", s:foreground, "", "bold")
+  call s:HL("TSConstBuiltin", s:pink, "", "")
+  call s:HL("TSInclude", s:blue, "", "")
+  call s:HL("TSVariableBuiltin", s:pink, "", "")
+  " call s:HL("TSLabel", s:subtleBlue, "", "italic")
+  call s:HL("TSDocComment", s:comment, "", "bold")
+
+  call s:HL("TSPunctBracket", s:foreground, "", "")
+  call s:HL("TSPunctDelimiter", s:foreground, "", "")
+
+  call s:HL("TSRustGeneric", s:operator, "", "")
+  call s:HL("TSRustMutSpecifier", s:orange, "", "")
+  call s:HL("TSRustTypeInPath", s:red, "", "bold")
+
 
   "=====================================================================
   " SYNTAX HIGHLIGHTING CODE BELOW THIS LINE ISN'T TESTED FOR THIS THEME
