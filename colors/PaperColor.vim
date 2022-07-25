@@ -348,6 +348,10 @@ else " LIGHT VARIANT
   let s:aqua    = ['#3e999f', '31'] "Delimiter
   let s:operator    = s:aqua			"Operator
 
+  let s:conflictmarker_ours = ['#c1ffc9', '0']
+  let s:conflictmarker_theirs = ['#abd6cf', '0']
+  let s:conflictmarker_common_ancestors = ['#f1c3ff', '0']
+
 
 
   let s:conditional = s:purple
@@ -1246,76 +1250,67 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("TSRustTypeInPath", s:red, "", "bold")
 
 
-  "=====================================================================
-  " SYNTAX HIGHLIGHTING CODE BELOW THIS LINE ISN'T TESTED FOR THIS THEME
-  "=====================================================================
-
-
-  " " CoffeeScript Highlighting
-  " call s:HL("coffeeRepeat", s:purple, "", "")
-  " call s:HL("coffeeConditional", s:purple, "", "")
-  " call s:HL("coffeeKeyword", s:purple, "", "")
-  " call s:HL("coffeeObject", s:yellow, "", "")
-
-
-  " " ShowMarks Highlighting
-  " call s:HL("ShowMarksHLl", s:orange, s:background, "none")
-  " call s:HL("ShowMarksHLo", s:purple, s:background, "none")
-  " call s:HL("ShowMarksHLu", s:yellow, s:background, "none")
-  " call s:HL("ShowMarksHLm", s:aqua, s:background, "none")
-
-
-
-
-
-  " " Scala "highlighting
-  " call s:HL("scalaKeyword", s:purple, "", "")
-  " call s:HL("scalaKeywordModifier", s:purple, "", "")
-  " call s:HL("scalaOperator", s:blue, "", "")
-  " call s:HL("scalaPackage", s:pink, "", "")
-  " call s:HL("scalaFqn", s:foreground, "", "")
-  " call s:HL("scalaFqnSet", s:foreground, "", "")
-  " call s:HL("scalaImport", s:purple, "", "")
-  " call s:HL("scalaBoolean", s:orange, "", "")
-  " call s:HL("scalaDef", s:purple, "", "")
-  " call s:HL("scalaVal", s:purple, "", "")
-  " call s:HL("scalaVar", s:aqua, "", "")
-  " call s:HL("scalaClass", s:purple, "", "")
-  " call s:HL("scalaObject", s:purple, "", "")
-  " call s:HL("scalaTrait", s:purple, "", "")
-  " call s:HL("scalaDefName", s:blue, "", "")
-  " call s:HL("scalaValName", s:foreground, "", "")
-  " call s:HL("scalaVarName", s:foreground, "", "")
-  " call s:HL("scalaClassName", s:foreground, "", "")
-  " call s:HL("scalaType", s:yellow, "", "")
-  " call s:HL("scalaTypeSpecializer", s:yellow, "", "")
-  " call s:HL("scalaAnnotation", s:orange, "", "")
-  " call s:HL("scalaNumber", s:orange, "", "")
-  " call s:HL("scalaDefSpecializer", s:yellow, "", "")
-  " call s:HL("scalaClassSpecializer", s:yellow, "", "")
-  " call s:HL("scalaBackTick", s:olive, "", "")
-  " call s:HL("scalaRoot", s:foreground, "", "")
-  " call s:HL("scalaMethodCall", s:blue, "", "")
-  " call s:HL("scalaCaseType", s:yellow, "", "")
-  " call s:HL("scalaLineComment", s:comment, "", "")
-  " call s:HL("scalaComment", s:comment, "", "")
-  " call s:HL("scalaDocComment", s:comment, "", "")
-  " call s:HL("scalaDocTags", s:comment, "", "")
-  " call s:HL("scalaEmptyString", s:olive, "", "")
-  " call s:HL("scalaMultiLineString", s:olive, "", "")
-  " call s:HL("scalaUnicode", s:orange, "", "")
-  " call s:HL("scalaString", s:olive, "", "")
-  " call s:HL("scalaStringEscape", s:olive, "", "")
-  " call s:HL("scalaSymbol", s:orange, "", "")
-  " call s:HL("scalaChar", s:orange, "", "")
-  " call s:HL("scalaXml", s:olive, "", "")
-  " call s:HL("scalaConstructorSpecializer", s:yellow, "", "")
-  " call s:HL("scalaBackTick", s:blue, "", "")
-
   " Git
   call s:HL("diffAdded", s:olive, "", "")
   call s:HL("diffRemoved", s:pink, "", "")
   call s:HL("gitcommitSummary", "", "", "bold")
+
+  call s:HL("ConflictMarkerOurs", "", s:conflictmarker_ours, "")
+  call s:HL("ConflictMarkerTheirs", "", s:conflictmarker_theirs, "")
+  call s:HL("ConflictMarkerCommonAncestorsHunk", "", s:conflictmarker_common_ancestors, "")
+
+
+  let s:error_color = "red"
+  let s:error_color = "yellow"
+
+
+  hi! LspDiagnosticsDefaultError           guifg=#ee1e1e
+  hi! LspDiagnosticsSignError              guifg=#ee1e1e
+  hi! LspDiagnosticsFloatingError          guifg=#ee1e1e
+  hi! LspDiagnosticsVirtualTextError       guifg=#ee1e1e
+  hi! LspDiagnosticsUnderlineError                       guisp=#ee1e1e cterm=undercurl gui=undercurl
+
+  hi! LspDiagnosticsDefaultWarning         guifg=#eeac16
+  hi! LspDiagnosticsSignWarning            guifg=#eeac16
+  hi! LspDiagnosticsFloatingWarning        guifg=#eeac16
+  hi! LspDiagnosticsVirtualTextWarning     guifg=#eeac16
+  hi! LspDiagnosticsUnderlineWarning                     guisp=#eeac16 cterm=undercurl gui=undercurl
+
+  hi! LspDiagnosticsDefaultInformation     guifg=#9c16ee
+  hi! LspDiagnosticsSignInformation        guifg=#9c16ee
+  hi! LspDiagnosticsFloatingInformation    guifg=#9c16ee
+  hi! LspDiagnosticsVirtualTextInformation guifg=#9c16ee
+  hi! LspDiagnosticsUnderlineInformation                 guisp=#9c16ee cterm=undercurl gui=undercurl
+
+  hi! LspDiagnosticsDefaultHint            guifg=#1681ee
+  hi! LspDiagnosticsSignHint               guifg=#1681ee
+  hi! LspDiagnosticsFloatingHint           guifg=#1681ee
+  hi! LspDiagnosticsVirtualTextHint        guifg=#1681ee
+  hi! LspDiagnosticsUnderlineHint                        guisp=#1681ee cterm=undercurl gui=undercurl
+
+
+  hi! link DiagnosticError LspDiagnosticsDefaultError
+  hi! link DiagnosticWarn LspDiagnosticsDefaultWarning
+  hi! link DiagnosticInfo LspDiagnosticsDefaultInformation
+  hi! link DiagnosticHint LspDiagnosticsDefaultHint
+  hi! link DiagnosticVirtualTextWarn LspDiagnosticsVirtualTextWarning
+  hi! link DiagnosticUnderlineWarn LspDiagnosticsUnderlineWarning
+  hi! link DiagnosticFloatingWarn LspDiagnosticsFloatingWarning
+  hi! link DiagnosticSignWarn LspDiagnosticsSignWarning
+  hi! link DiagnosticVirtualTextError LspDiagnosticsVirtualTextError
+  hi! link DiagnosticUnderlineError LspDiagnosticsUnderlineError
+  hi! link DiagnosticFloatingError LspDiagnosticsFloatingError
+  hi! link DiagnosticSignError LspDiagnosticsSignError
+  hi! link DiagnosticVirtualTextInfo LspDiagnosticsVirtualTextInformation
+  hi! link DiagnosticUnderlineInfo LspDiagnosticsUnderlineInformation
+  hi! link DiagnosticFloatingInfo LspDiagnosticsFloatingInformation
+  hi! link DiagnosticSignInfo LspDiagnosticsSignInformation
+  hi! link DiagnosticVirtualTextHint LspDiagnosticsVirtualTextHint
+  hi! link DiagnosticUnderlineHint LspDiagnosticsUnderlineHint
+  hi! link DiagnosticFloatingHint LspDiagnosticsFloatingHint
+  hi! link DiagnosticSignHint LspDiagnosticsSignHint
+
+
 
 endif
 " }}}
