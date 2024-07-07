@@ -1240,7 +1240,9 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("TSInclude", s:blue, "", "")
   call s:HL("TSVariableBuiltin", s:pink, "", "")
   " call s:HL("TSLabel", s:subtleBlue, "", "italic")
-  call s:HL("TSDocComment", s:comment, "", "bold")
+  call s:HL("@comment.documentation", s:comment, "", "bold")
+
+  call s:HL("@variable", s:foreground, "", "")
 
   call s:HL("TSPunctBracket", s:foreground, "", "")
   call s:HL("TSPunctDelimiter", s:foreground, "", "")
